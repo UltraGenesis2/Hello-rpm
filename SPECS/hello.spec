@@ -1,6 +1,6 @@
 Name:           hello-rpm
 Version:        2.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        An upgraded Hello World script with config, docs, and scriptlets
 
 License:        MIT
@@ -54,3 +54,6 @@ fi
 * Thu Apr 30 2026 Your Name <you@example.com> - 2.0-1
 - Upgraded to version 2.0
 - Added configuration file and manual page
+
+* Fri May 01 2026 Your Name <you@example.com> - 2.0-2
+- Updated author information in man page
