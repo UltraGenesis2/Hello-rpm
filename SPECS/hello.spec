@@ -23,19 +23,19 @@ a configuration file in /etc, a man page, and a post-installation script.
 
 %install
 # Create directories inside the buildroot
-install -d -m 755 %{buildroot}/usr/local/bin
+install -d -m 755 %{buildroot}/usr/bin
 install -d -m 755 %{buildroot}/etc
 install -d -m 755 %{buildroot}/usr/share/man/man1
 
 # Copy files into place
-install -m 755 %{SOURCE0} %{buildroot}/usr/local/bin/hello
+install -m 755 %{SOURCE0} %{buildroot}/usr/bin/hello
 install -m 644 %{SOURCE1} %{buildroot}/etc/hello.conf
 install -m 644 %{SOURCE2} %{buildroot}/usr/share/man/man1/hello.1
 
 %files
-# The %config directive ensures changes to the config file are saved during updates
+# The config directive ensures changes to the config file are saved during updates
 %config(noreplace) /etc/hello.conf
-/usr/local/bin/hello
+/usr/bin/hello
 # Use wildcards to capture compressed man pages created automatically by the build
 /usr/share/man/man1/*
 
@@ -51,9 +51,12 @@ if [ $1 -eq 0 ]; then
 fi
 
 %changelog
-* Thu Apr 30 2026 Your Name <you@example.com> - 2.0-1
+
+* Fri May 01 2026 Your Name <ultragenesis24@gmail.com> - 2.0-2
+- Updated author information in man page
+- Fixed local installation directory structure and changelog order
+
+* Thu Apr 30 2026 Your Name <ultragenesis24@gmail.com> - 2.0-1
 - Upgraded to version 2.0
 - Added configuration file and manual page
 
-* Fri May 01 2026 Your Name <you@example.com> - 2.0-2
-- Updated author information in man page
